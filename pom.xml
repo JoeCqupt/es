@@ -7,13 +7,51 @@
     <groupId>es</groupId>
     <artifactId>es</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!-- 集成与继承-->
     <modules>
         <module>es-common</module>
+        <module>es-domain</module>
+        <module>es-web</module>
+        <module>es-api</module>
+        <module>es-biz</module>
+        <module>es-event</module>
+        <module>es-integration</module>
+        <module>es-api-impl</module>
     </modules>
     <packaging>pom</packaging>
     <description>
         javaweb 项目脚手架
     </description>
+    <properties>
+        <!--指定项目编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.7</jdk.version>
+    </properties>
+    <!-- 声明依赖 -->
+    <dependencyManagement>
+
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!--指定jdk版本-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>

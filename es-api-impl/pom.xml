@@ -10,6 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>es-api-impl</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>es</groupId>
+            <artifactId>es-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>es</groupId>
+            <artifactId>es-biz</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

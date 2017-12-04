@@ -11,5 +11,10 @@
 
     <artifactId>es-event</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>es</groupId>
+            <artifactId>es-biz</artifactId>
+        </dependency>
+    </dependencies>
 </project>

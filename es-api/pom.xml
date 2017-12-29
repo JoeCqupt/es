@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>es-api</artifactId>
-
+    <description>
+        用于暴露服务
+    </description>
 
 </project>

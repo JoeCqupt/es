@@ -11,6 +11,10 @@
 
     <artifactId>es-common</artifactId>
 
+    <description>
+        用于提供 公共 工具类
+    </description>
+
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>

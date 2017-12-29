@@ -29,6 +29,7 @@
         <spring.version>4.0.3.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
         <project.version>1.0-SNAPSHOT</project.version>
+        <profiles.dir>src/main/profiles</profiles.dir>
     </properties>
     <!-- 声明依赖 -->
     <dependencyManagement>
@@ -154,6 +155,7 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
 
             <dependency>
@@ -230,11 +232,33 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
+                    <!--跳过测试-->
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <property>
+                    <name>environment.type</name>
+                    <value>dev</value>
+                </property>
+            </activation>
+            <properties>
+                <profile.dir>${profiles.dir}/dev</profile.dir>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>online</id>
+            <properties>
+                <profile.dir>${profiles.dir}/online</profile.dir>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>

@@ -15,6 +15,29 @@
             <groupId>es</groupId>
             <artifactId>es-biz</artifactId>
         </dependency>
+        <dependency>
+            <groupId>es</groupId>
+            <artifactId>es-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>es</groupId>
+            <artifactId>es-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

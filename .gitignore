@@ -1,0 +1,25 @@
+#gitignore file
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.pyc
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+*/target/
+.idea/
+*.iml
+*.log
+*.settings
+*.classpath
+*.project
+
+#过滤敏感信息
+es-web/src/main/profiles/dev/server.properties
+es-web/src/main/profiles/online/server.properties

@@ -7,21 +7,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-    <!--1、检查扩展名（如my.pdf）；2、检查Parameter（如my?format=pdf）；3、检查Accept Header-->
-    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
-        <!-- 扩展名至mimeType的映射,即 /user.json => application/json -->
-        <property name="favorPathExtension" value="true"/>
-        <!-- 用于开启 /userinfo/123?format=json 的支持 -->
-        <property name="favorParameter" value="true"/>
-        <property name="parameterName" value="format"/>
-        <!-- 是否忽略Accept Header -->
-        <property name="ignoreAcceptHeader" value="false"/>
-        <property name="mediaTypes"> <!--扩展名到MIME的映射；favorPathExtension, favorParameter是true时起作用  -->
-            <value>
-                json=application/json
-            </value>
-        </property>
-    </bean>
+
 
     <!-- 文件上传 -->
 
@@ -33,78 +19,19 @@
         </property>
     </bean>
 
-    <!-- ========================= VIEW定义 ========================= -->
-    <!-- 内容协商视图解析器；根据客户端不同的请求决定不同的view进行响应 -->
-    <!-- 会自动根据解析的contentType来决定使用哪个视图解析器（默认使用整个web应用中的viewResolver） -->
-    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver" p:order="0">
-        <!-- 内容协商管理器 用于决定media type -->
-        <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
-        <!-- 默认视图 放在解析链最后 -->
-        <property name="defaultViews">
-            <list>
-                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
-            </list>
-        </property>
-    </bean>
 
-    <!-- velocity模板配置 -->
-    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-        <property name="resourceLoaderPath" value="/WEB-INF/template/"/>
-        <property name="configLocation" value="classpath:velocity.properties"/>
-    </bean>
 
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
-        <property name="cache" value="false"/>
-        <!--是否缓存模板-->
-        <property name="order" value="10"/>
-        <property name="suffix" value=".vm"/>
-        <property name="prefix" value=""/>
-        <property name="layoutUrl" value="/layout/default.vm"/>
-        <property name="exposeSpringMacroHelpers" value="true"/>
-        <property name="dateToolAttribute" value="dateTool"/>
-        <property name="numberToolAttribute" value="numberTool"/>
-        <property name="contentType" value="text/html;charset=UTF-8"/>
-        <property name="requestContextAttribute" value="rc"/>
-        <property name="toolboxConfigLocation" value="/WEB-INF/classes/velocity-tools.xml"/>
-    </bean>
 
-    <!-- 完成请求和注解POJO的映射 -->
-    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"/>
 
-    <!--&lt;!&ndash; 静态资源&ndash;&gt;-->
-    <mvc:resources mapping="/static/**" location="/static/"/>
+
     <!-- 设置使用注解的类所在的jar包 -->
-    <context:component-scan base-package="com.shandiangou.picking">
+    <context:component-scan base-package="com.example.web">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
-    <!-- 定义环境变量文件 -->
-    <bean id="propertyHolder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
-        <property name="ignoreResourceNotFound" value="true"/>
-        <property name="locations">
-            <list>
-                <value>classpath*:/*.properties</value>
-            </list>
-        </property>
-    </bean>
-
-    <bean id="SpringContextUtil" class="com.shandiangou.picking.common.utils.SpringContextUtil" scope="singleton"/>
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
-        <property name="interceptors">
-            <list>
-                <bean class="com.shandiangou.picking.web.interceptor.security.SecurityInterceptor"/>
-            </list>
-        </property>
-    </bean>
 
 
-    <bean id="pickingHandlerExceptionResolver" class="com.shandiangou.picking.web.interceptor.PickingHandlerExceptionResolver">
-        <!--order表示优先级，值越小优先级越高-->
-        <property name="order" value="1"></property>
-    </bean>
 
-    <mvc:interceptors>
-        <bean class="com.shandiangou.picking.web.interceptor.security.SecurityInterceptor"/>
-    </mvc:interceptors>
+
+
 
 </beans>

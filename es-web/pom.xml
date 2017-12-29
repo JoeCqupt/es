@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>es-web</artifactId>
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>es</groupId>
@@ -37,29 +38,12 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
 
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <property>
-                    <name>environment.type</name>
-                    <value>dev</value>
-                </property>
-            </activation>
-            <properties>
-                <profile.dir>${profiles.dir}/dev</profile.dir>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>online</id>
-            <properties>
-                <profile.dir>${profiles.dir}/online</profile.dir>
-            </properties>
-        </profile>
-    </profiles>
 
 </project>

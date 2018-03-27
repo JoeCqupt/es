@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 
     <!-- 文件上传 -->
 
-    <bean id="multipartResolver"
-          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <!-- 设置上传文件的最大尺寸为2MB -->
-        <property name="maxUploadSize">
-            <value>20485760</value>
-        </property>
-    </bean>
-
-
-
-
+    <!--<bean id="multipartResolver"-->
+    <!--class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+    <!--&lt;!&ndash; 设置上传文件的最大尺寸为2MB &ndash;&gt;-->
+    <!--<property name="maxUploadSize">-->
+    <!--<value>20485760</value>-->
+    <!--</property>-->
+    <!--</bean>-->
 
 
     <!-- 设置使用注解的类所在的jar包 -->
     <context:component-scan base-package="com.example.web">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
-
-
-
-
 
 
 </beans>

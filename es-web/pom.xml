@@ -24,6 +24,8 @@
             <groupId>es</groupId>
             <artifactId>es-domain</artifactId>
         </dependency>
+
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -38,11 +40,11 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
+
     </dependencies>
 
+    <build>
+        <finalName>es-web</finalName>
+    </build>
 
 </project>

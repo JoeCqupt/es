@@ -90,8 +90,6 @@
             <artifactId>spring-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -131,7 +129,6 @@
                 <profile.dir>${profiles.dir}/dev</profile.dir>
             </properties>
         </profile>
-
 
         <profile>
             <id>online</id>

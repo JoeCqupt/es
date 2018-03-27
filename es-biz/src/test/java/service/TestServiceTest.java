@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class TestServiceTest extends TestBase {
+public class TestServiceTest extends service.TestBase {
     @Autowired
     private TestService testService;
 

@@ -25,12 +25,12 @@
             <artifactId>commons-lang</artifactId>
         </dependency>
         <!-- 这里手动导入的是 阿里大于的 SDK -->
-        <dependency>
-            <groupId>com.taobao</groupId>
-            <artifactId>api</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/lib/taobao-sdk-java-auto_1455552377940-20160607.jar</systemPath>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>com.taobao</groupId>-->
+        <!--<artifactId>api</artifactId>-->
+        <!--<version>1.0</version>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/src/main/lib/taobao-sdk-java-auto_1455552377940-20160607.jar</systemPath>-->
+        <!--</dependency>-->
     </dependencies>
 </project>

@@ -7,6 +7,24 @@
     <groupId>es</groupId>
     <artifactId>es</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>easy start</name>
+    <inceptionYear>2017</inceptionYear>
+    <description>
+        javaweb 项目开发脚手架,用于快速构建javaweb项目。
+    </description>
+
+    <developers>
+        <developer>
+            <name>joecqupt</name>
+            <id>joe</id>
+            <email>joecqupt@163.com</email>
+            <organization/>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
     <!-- 集成与继承-->
     <modules>
         <module>es-common</module>
@@ -19,9 +37,7 @@
         <module>es-api-impl</module>
     </modules>
     <packaging>pom</packaging>
-    <description>
-        javaweb 项目脚手架
-    </description>
+
     <properties>
         <!--指定项目编码-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -128,12 +144,7 @@
                 <artifactId>mybatis</artifactId>
                 <version>3.4.5</version>
             </dependency>
-            <dependency>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-core</artifactId>
-                <version>1.3.2</version>
-                <scope>test</scope>
-            </dependency>
+
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
@@ -145,6 +156,7 @@
                 <artifactId>druid</artifactId>
                 <version>1.0.14</version>
             </dependency>
+
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -200,18 +212,20 @@
                 <artifactId>commons-lang</artifactId>
                 <version>2.4</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
-            <dependency>
-                <groupId>commons-fileupload</groupId>
-                <artifactId>commons-fileupload</artifactId>
-                <version>1.3.1</version>
-            </dependency>
+            <!--<dependency>-->
+            <!--<groupId>commons-fileupload</groupId>-->
+            <!--<artifactId>commons-fileupload</artifactId>-->
+            <!--<version>1.3.1</version>-->
+            <!--</dependency>-->
         </dependencies>
     </dependencyManagement>
 
     <build>
         <!-- 申明 插件-->
         <pluginManagement>
+            <plugins>
+
+            </plugins>
         </pluginManagement>
         <plugins>
             <!--指定jdk版本-->
@@ -223,6 +237,7 @@
                     <target>${jdk.version}</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -230,14 +245,14 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <!--跳过测试-->
-                    <skipTests>true</skipTests>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-surefire-plugin</artifactId>-->
+            <!--<configuration>-->
+            <!--&lt;!&ndash;跳过测试&ndash;&gt;-->
+            <!--<skipTests>true</skipTests>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 </project>

@@ -8,7 +8,7 @@
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
-        <property name="driverClassName" value="${driver}" />
+        <property name="driverClassName" value="${className}" />
         <property name="url" value="${url}" />
         <property name="username" value="${username}" />
         <property name="password" value="${password}" />
@@ -49,8 +49,6 @@
 
     <!-- scan for mappers and let them be autowired -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <!--指定扫描的注解-->
-        <!--<property name="annotationClass" value="org.springframework.stereotype.Repository"/>-->
         <property name="basePackage" value="com.example.dao"/>
     </bean>
 
@@ -58,10 +56,7 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-    <!--<bean id="transactionTemplate"-->
-    <!--class="org.springframework.transaction.support.TransactionTemplate">-->
-    <!--<property name="transactionManager" ref="transactionManager" />-->
-    <!--</bean>-->
+
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>

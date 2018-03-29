@@ -21,5 +21,4 @@ hs_err_pid*
 *.project
 
 #过滤敏感信息
-es-biz/src/main/profiles/dev/server.properties
-es-biz/src/main/profiles/online/server.properties
+es-biz/src/main/profiles/dev/

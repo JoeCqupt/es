@@ -1,12 +1,13 @@
-package service;
+package test.service;
 
 import com.example.DO.TestDO;
 import com.example.service.TestService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import test.TestBase;
 
-public class TestServiceTest extends service.TestBase {
+public class TestServiceTest extends TestBase {
     @Autowired
     private TestService testService;
 

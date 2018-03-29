@@ -16,7 +16,7 @@
     </description>
 
     <properties>
-        <profiles.dir>src/main/profiles</profiles.dir>
+        <profiles.dir>${project.basedir}/src/main/profiles</profiles.dir>
     </properties>
 
 
@@ -98,27 +98,18 @@
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
+            <!--<resource>-->
+                <!--<directory>src/test/resources</directory>-->
+                <!--<filtering>true</filtering>-->
+            <!--</resource>-->
             <resource>
-                <directory>src/test/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-            <resource>
-                <directory>${profile.dir}</directory>
+                <directory>${profile.active}</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
+    <!--配置多环境-->
     <profiles>
         <profile>
             <id>dev</id>
@@ -126,16 +117,25 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <profile.dir>${profiles.dir}/dev</profile.dir>
+                <profile.active>${profiles.dir}/dev</profile.active>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>gray</id>
+            <properties>
+                <profile.active>${profiles.dir}/gray</profile.active>
             </properties>
         </profile>
 
         <profile>
             <id>online</id>
             <properties>
-                <profile.dir>${profiles.dir}/online</profile.dir>
+                <profile.active>${profiles.dir}/online</profile.active>
             </properties>
         </profile>
+
+
     </profiles>
 
 

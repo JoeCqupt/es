@@ -8,7 +8,7 @@
 
 
     <!-- data base set configure -->
-    <context:property-placeholder location="classpath:server.properties"/>
+    <context:property-placeholder location="classpath*:server.properties"/>
 
 
     <import resource="classpath:datasource/datasource.xml"/>

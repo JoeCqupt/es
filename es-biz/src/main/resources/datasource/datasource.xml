@@ -10,7 +10,7 @@
         <!-- 基本属性 url、user、password -->
         <property name="driverClassName" value="${className}" />
         <property name="url" value="${url}" />
-        <property name="username" value="${username}" />
+        <property name="username" value="${user}" />
         <property name="password" value="${password}" />
 
         <!-- 配置监控统计拦截的filters -->

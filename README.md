@@ -1,8 +1,9 @@
-## es easy-start(java-web 开发脚手架)
-* 计划使用
-	* dubbo
-	* ssm
-	* mybatis example
-	* page helper
-	* hibernate validator
-	* maven
+# es easy-start
+java web 项目开发示例项目
+## todo
+* ssm
+* mybatis-generator Example
+* nginx
+* dubbo
+* redis
+* MQ(activeMQ/RocketMQ)

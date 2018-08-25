@@ -17,7 +17,7 @@
         <developer>
             <name>joecqupt</name>
             <id>joe</id>
-            <email>joecqupt@163.com</email>
+            <email>469391363@qq.com</email>
             <organization/>
             <roles>
                 <role>Java Developer</role>
@@ -224,10 +224,6 @@
         <!-- 申明 插件-->
         <pluginManagement>
             <plugins>
-
-            </plugins>
-        </pluginManagement>
-        <plugins>
             <!--指定jdk版本-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -247,14 +243,8 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-surefire-plugin</artifactId>-->
-            <!--<configuration>-->
-            <!--&lt;!&ndash;跳过测试&ndash;&gt;-->
-            <!--<skipTests>true</skipTests>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
-        </plugins>
+                     
+            </plugins>
+        </pluginManagement>                 
     </build>
 </project>

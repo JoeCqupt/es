@@ -8,7 +8,11 @@
 
 
     <!-- data base set configure -->
-    <context:property-placeholder location="classpath*:server.properties" ignore-unresolvable="true"/>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+        <property name="locations">
+            <value>classpath:server.properties</value>
+        </property>
+    </bean>
 
 
     <import resource="classpath:datasource/datasource.xml"/>

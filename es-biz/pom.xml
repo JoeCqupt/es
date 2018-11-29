@@ -29,6 +29,10 @@
             <groupId>es</groupId>
             <artifactId>es-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>es</groupId>
+            <artifactId>es-integration</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -80,33 +84,39 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
+
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <filtering>true</filtering>
+                <excludes>
+                    <exclude>profiles/dev/**</exclude>
+                    <exclude>profiles/gray/**</exclude>
+                    <exclude>profiles/online/**</exclude>
+                </excludes>
             </resource>
-            <!--<resource>-->
-                <!--<directory>src/test/resources</directory>-->
-                <!--<filtering>true</filtering>-->
-            <!--</resource>-->
             <resource>
-                <directory>${profile.active}</directory>
-                <filtering>true</filtering>
+                <directory>src/main/resources/profiles/${environment.active}</directory>
             </resource>
         </resources>
+
+        <testResources>
+            <testResource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>profiles/dev/**</exclude>
+                    <exclude>profiles/gray/**</exclude>
+                    <exclude>profiles/online/**</exclude>
+                </excludes>
+            </testResource>
+            <testResource>
+                <directory>src/main/resources/profiles/${environment.active}</directory>
+            </testResource>
+        </testResources>
+
     </build>
 
     <!--配置多环境-->
@@ -117,25 +127,23 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <profile.active>${profiles.dir}/dev</profile.active>
+                <environment.active>dev</environment.active>
             </properties>
         </profile>
 
         <profile>
             <id>gray</id>
             <properties>
-                <profile.active>${profiles.dir}/gray</profile.active>
+                <environment.active>gray</environment.active>
             </properties>
         </profile>
 
         <profile>
             <id>online</id>
             <properties>
-                <profile.active>${profiles.dir}/online</profile.active>
+                <environment.active>online</environment.active>
             </properties>
         </profile>
-
-
     </profiles>
 
 

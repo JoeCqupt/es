@@ -45,6 +45,7 @@
         <spring.version>4.0.3.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
         <project.version>1.0-SNAPSHOT</project.version>
+        <jdbc.version>5.1.30</jdbc.version>
     </properties>
     <!-- 声明依赖 -->
     <dependencyManagement>
@@ -160,7 +161,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.30</version>
+                <version>${jdbc.version}</version>
             </dependency>
 
 

@@ -103,19 +103,7 @@
             </resource>
         </resources>
 
-        <testResources>
-            <testResource>
-                <directory>src/main/resources</directory>
-                <excludes>
-                    <exclude>profiles/dev/**</exclude>
-                    <exclude>profiles/gray/**</exclude>
-                    <exclude>profiles/online/**</exclude>
-                </excludes>
-            </testResource>
-            <testResource>
-                <directory>src/main/resources/profiles/${environment.active}</directory>
-            </testResource>
-        </testResources>
+
 
         <!--mybatis generator-->
         <plugins>
@@ -132,6 +120,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
+                        <version>${jdbc.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

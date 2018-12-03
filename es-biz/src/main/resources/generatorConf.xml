@@ -35,7 +35,7 @@
         </javaClientGenerator>
 
         <table  tableName="t_user" domainObjectName="User" >
-            <property name="useActualColumnNames" value="true"/>
+            <property name="useActualColumnNames" value="false"/>
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
             <columnOverride column="DATE_FIELD" property="startDate" />
             <ignoreColumn column="FRED" />

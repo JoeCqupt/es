@@ -16,7 +16,7 @@ public class UserDaoTest extends TestBase {
     @Test
     public void test1(){
         UserExample userExample = new UserExample();
-        userExample.createCriteria().andUser_ageIsNotNull();
+        userExample.createCriteria().andUserAgeIsNotNull();
         List<User> userList = userMapper.selectByExample(userExample);
         Assert.assertNotNull(userList);
     }

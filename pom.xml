@@ -266,7 +266,7 @@
                     <failOnError>true</failOnError>
                     <includeTests>true</includeTests>
                     <!--findbugs需要忽略的错误的配置文件-->
-                    <excludeFilterFile>/findbugs-exclude-filter.xml</excludeFilterFile>
+                    <excludeFilterFile>findbugs-exclude-filter.xml</excludeFilterFile>
                 </configuration>
                 <!--<executions>-->
                     <!--<execution>-->

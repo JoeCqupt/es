@@ -1,7 +1,9 @@
 package com.example.Constants;
 
 public enum ResponseCode {
-    OK(20000,"ok");
+    OK(20000,"ok"),
+    PARAM_ERROR(40000,"param error"),
+    UNKNOWN_ERROR(60000,"unknown error");
     int code;
     String msg;
 

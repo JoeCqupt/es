@@ -4,5 +4,5 @@ import com.example.DO.User;
 
 public interface UserService {
     User login(String userName, String password);
-    User register(User user);
+    boolean register(User user);
 }

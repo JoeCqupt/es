@@ -52,12 +52,21 @@ public class ResultDTO<T> {
         this.total = total;
     }
 
-    public static<T> ResultDTO success(T data){
+    public static <T> ResultDTO success(T data) {
         ResultDTO<T> resultDTO = new ResultDTO();
         resultDTO.setSuccess(true);
         resultDTO.setCode(ResponseCode.OK.getCode());
         resultDTO.setMsg(ResponseCode.OK.getMsg());
         resultDTO.setData(data);
+        return resultDTO;
+    }
+
+    public static <T> ResultDTO fail(ResponseCode responseCode) {
+        ResultDTO<T> resultDTO = new ResultDTO<>();
+        resultDTO.setSuccess(false);
+        resultDTO.setCode(responseCode.getCode());
+        resultDTO.setMsg(responseCode.getMsg());
+        resultDTO.setData(null);
         return resultDTO;
     }
 }

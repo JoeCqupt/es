@@ -13,6 +13,18 @@ import java.util.List;
 public class UserDaoTest extends TestBase {
     @Autowired
     private UserMapper userMapper;
+
+    @Test
+    public void insertTest1(){
+        User user = new User();
+        user.setUserAge((byte) 24);
+        user.setUserName("joe");
+        user.setUserNickName("joecqupt");
+        user.setUserPass("test");
+        user.setUserSalt("test");
+        Assert.assertEquals(1, userMapper.insertSelective(user));
+    }
+
     @Test
     public void test1(){
         UserExample userExample = new UserExample();

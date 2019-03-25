@@ -25,6 +25,6 @@ public class PropertiesTest extends TestBase {
         Assert.assertEquals("com.mysql.jdbc.Driver", className);
         Assert.assertEquals("root", user);
         Assert.assertEquals("jdbc:mysql://localhost:3306/es_dev?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true", url);
-        Assert.assertEquals("101019", password);
+        Assert.assertEquals("joe101019", password);
     }
 }

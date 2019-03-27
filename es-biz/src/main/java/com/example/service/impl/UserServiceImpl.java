@@ -18,7 +18,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean register(User user) {
-        return false;
+    public void register(User user) {
+        // todo 业务逻辑实现
+        userMapper.insertSelective(user);
     }
 }

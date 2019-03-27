@@ -1,6 +1,6 @@
 package com.example.DTO;
 
-import com.example.Constants.ResponseCode;
+import com.example.constants.ErrorCode;
 
 /**
  * json 响应对象
@@ -8,9 +8,7 @@ import com.example.Constants.ResponseCode;
 public class ResultDTO<T> {
     private boolean isSuccess;
     private int code;
-    private String msg;
     private T data;
-    private int total;
 
     public boolean isSuccess() {
         return isSuccess;
@@ -28,13 +26,6 @@ public class ResultDTO<T> {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
 
     public T getData() {
         return data;
@@ -44,29 +35,18 @@ public class ResultDTO<T> {
         this.data = data;
     }
 
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
 
     public static <T> ResultDTO success(T data) {
         ResultDTO<T> resultDTO = new ResultDTO();
         resultDTO.setSuccess(true);
-        resultDTO.setCode(ResponseCode.OK.getCode());
-        resultDTO.setMsg(ResponseCode.OK.getMsg());
         resultDTO.setData(data);
         return resultDTO;
     }
 
-    public static <T> ResultDTO fail(ResponseCode responseCode) {
+    public static <T> ResultDTO fail(int errorCode) {
         ResultDTO<T> resultDTO = new ResultDTO<>();
         resultDTO.setSuccess(false);
-        resultDTO.setCode(responseCode.getCode());
-        resultDTO.setMsg(responseCode.getMsg());
-        resultDTO.setData(null);
+        resultDTO.setCode(errorCode);
         return resultDTO;
     }
 }

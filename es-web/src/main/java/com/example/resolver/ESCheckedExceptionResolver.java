@@ -5,6 +5,7 @@ import com.example.DTO.ResultDTO;
 import com.example.exception.ESCheckedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,6 +20,7 @@ import java.nio.charset.StandardCharsets;
  * 处理 spring mvc 处理请求时候抛出的异常
  */
 
+@Component
 public class ESCheckedExceptionResolver implements HandlerExceptionResolver {
 
     private static Logger LOGGER = LoggerFactory.getLogger(ESCheckedExceptionResolver.class);

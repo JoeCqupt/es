@@ -6,7 +6,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.0.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-
     <!-- 使用FastJson -->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
@@ -24,13 +23,8 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-     
-
-
     <!-- 设置使用注解的类所在的jar包 -->
     <context:component-scan base-package="com.example.web">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
-
-
 </beans>

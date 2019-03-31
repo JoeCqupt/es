@@ -3,10 +3,7 @@ package com.example.web;
 import com.example.DO.User;
 import com.example.DTO.ResultDTO;
 import com.example.REQ.user.UserRegisterREQ;
-import com.example.constants.ErrorCode;
-import com.example.exception.ESCheckedException;
 import com.example.service.UserService;
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +24,7 @@ public class UserController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ResultDTO register(@RequestBody UserRegisterREQ req) {
-        logger.debug("user register -->{}", req);
+        logger.debug("user register --> {}", req);
 
         User user = new User();
         user.setUserName(req.getName());

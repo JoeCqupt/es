@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("test")
 public class TestController {
     @RequestMapping("test")
-    @ResponseBodyÅ
+    @ResponseBody
     public ResultDTO test(@RequestBody User user) {
         return ResultDTO.success(new User());
     }

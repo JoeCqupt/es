@@ -11,6 +11,7 @@ public class ErrorCode {
     // 系统相关的错误: 2开头
     public final static int PARAM_ERROR = 20001;  // 参数错误
     public final static int PARAM_NULL = 20002;   // 参数为空
+    public final static int UNKNOWN_ERROR = 20003;// 未知错误
 
     // 用户相关的错误：3开头
     public final static int USER_NAME_OR_PASS_ERROR = 30001; // 用户名或密码错误

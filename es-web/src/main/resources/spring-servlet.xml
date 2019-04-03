@@ -9,20 +9,23 @@
     <!-- 使用FastJson -->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
-            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
-                <property name="supportedMediaTypes" value="application/json"/>
-                <!--设置fastjson特性-->
-                <property name="features">
-                    <array>
-                        <!--设置null值也要输出，fastjson默认是关闭的-->
-                        <value>WriteMapNullValue</value>
-                        <!--设置使用文本方式输出日期，fastjson默认是long-->
-                        <value>WriteDateUseDateFormat</value>
-                    </array>
-                </property>
-            </bean>
+            <ref bean="fastJsonHttpMessageConverter"/>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter" id="fastJsonHttpMessageConverter">
+        <property name="supportedMediaTypes" value="application/json"/>
+        <!--设置fastjson特性-->
+        <property name="features">
+            <array>
+                <!--设置null值也要输出，fastjson默认是关闭的-->
+                <value>WriteMapNullValue</value>
+                <!--设置使用文本方式输出日期，fastjson默认是long-->
+                <value>WriteDateUseDateFormat</value>
+            </array>
+        </property>
+    </bean>
+
     <!-- 设置使用注解的类所在的包名 -->
     <context:component-scan base-package="com.example">
     </context:component-scan>

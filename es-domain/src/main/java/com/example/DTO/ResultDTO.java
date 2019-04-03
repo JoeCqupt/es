@@ -9,6 +9,15 @@ public class ResultDTO<T> {
     private boolean isSuccess;
     private int code;
     private T data;
+    private String msg;
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public boolean isSuccess() {
         return isSuccess;
@@ -47,6 +56,14 @@ public class ResultDTO<T> {
         ResultDTO<T> resultDTO = new ResultDTO<>();
         resultDTO.setSuccess(false);
         resultDTO.setCode(errorCode);
+        return resultDTO;
+    }
+
+    public static <T> ResultDTO fail(int errorCode, String errorMsg) {
+        ResultDTO<T> resultDTO = new ResultDTO<>();
+        resultDTO.setSuccess(false);
+        resultDTO.setCode(errorCode);
+        resultDTO.setMsg(errorMsg);
         return resultDTO;
     }
 }

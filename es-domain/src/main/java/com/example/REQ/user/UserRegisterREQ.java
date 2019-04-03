@@ -1,5 +1,6 @@
 package com.example.REQ.user;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Max;
@@ -23,7 +24,7 @@ public class UserRegisterREQ {
     private String nickName;
     @NotNull
     @NotBlank
-     @Length(min = 6, max = 20)
+    @Length(min = 6, max = 20)
     private String pass;
 
     public String getName() {

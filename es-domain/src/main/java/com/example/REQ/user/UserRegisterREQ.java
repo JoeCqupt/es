@@ -12,21 +12,18 @@ import javax.validation.constraints.NotNull;
 public class UserRegisterREQ {
     @NotNull
     @NotBlank
-    @Max(20)
-    @Min(6)
+    @Length(min = 6, max = 20)
     private String name;
     @Max(200)
     @Min(1)
     private byte age;
     @NotNull
     @NotBlank
-    @Max(20)
-    @Min(6)
+    @Length(min = 6, max = 20)
     private String nickName;
     @NotNull
     @NotBlank
-    @Max(20)
-    @Min(6)
+     @Length(min = 6, max = 20)
     private String pass;
 
     public String getName() {

@@ -22,9 +22,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
 
 /**
  * 处理 spring mvc 处理请求时候抛出的异常
@@ -35,7 +32,6 @@ public class ESCheckedExceptionResolver implements HandlerExceptionResolver, Pri
 
     private static Logger LOGGER = LoggerFactory.getLogger(ESCheckedExceptionResolver.class);
 
-    private static final String CONTENT_TYPE = "application/json; charset=utf-8";
 
     @Autowired
     private FastJsonHttpMessageConverter messageConverter;

@@ -5,26 +5,26 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 /**
  * 用户注册请求对象
  */
 public class UserRegisterREQ {
-    @NotNull
-    @NotBlank
-    @Length(min = 6, max = 20)
+
+    @NotBlank(message = "用户名不能为空")
+    @Length(min = 6, max = 20, message = "用户名长度为6-20")
     private String name;
-    @Max(200)
-    @Min(1)
+
+    @Max(value = 200, message = "年龄最大为20")
+    @Min(value = 1, message = "年龄最小为1")
     private byte age;
-    @NotNull
-    @NotBlank
-    @Length(min = 6, max = 20)
+
+    @NotBlank(message = "昵称不能为空")
+    @Length(min = 6, max = 20, message = "用户昵称长度为6-20")
     private String nickName;
-    @NotNull
-    @NotBlank
-    @Length(min = 6, max = 20)
+
+    @NotBlank(message = "密码不能为空")
+    @Length(min = 6, max = 20, message = "密码长度为6-20")
     private String pass;
 
     public String getName() {

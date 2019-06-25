@@ -1,5 +1,8 @@
 package com.example.REQ.user;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -9,6 +12,8 @@ import javax.validation.constraints.Min;
 /**
  * 用户注册请求对象
  */
+
+@Data
 public class UserRegisterREQ {
 
     @NotBlank(message = "用户名不能为空")
@@ -27,35 +32,4 @@ public class UserRegisterREQ {
     @Length(min = 6, max = 20, message = "密码长度为6-20")
     private String pass;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public byte getAge() {
-        return age;
-    }
-
-    public void setAge(byte age) {
-        this.age = age;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
 }

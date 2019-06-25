@@ -27,6 +27,5 @@
     </bean>
 
     <!-- 设置使用注解的类所在的包名 -->
-    <context:component-scan base-package="com.example">
-    </context:component-scan>
+    <context:component-scan base-package="com.example.web,com.example.resolver"/>
 </beans>

@@ -31,18 +31,10 @@ public class UserController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    public ResultDTO register(@RequestBody @Validated UserRegisterREQ req) {
-        MyAssert.notNull(req);
-        logger.debug("user register --> {}", req);
+    public ResultDTO register(@RequestBody UserRegisterREQ req) {
 
-        User user = new User();
-        user.setUserName(req.getName());
-        user.setUserAge(req.getAge());
-        user.setUserNickName(req.getNickName());
-        user.setUserPass(req.getPass());
-
-        userService.register(user);
-        return ResultDTO.success(user);
+        userService.register(req);
+        return ResultDTO.success(null);
     }
 
 }

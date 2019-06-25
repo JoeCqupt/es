@@ -11,11 +11,31 @@
 
     <artifactId>es-api</artifactId>
 
+    <description>
+        这个模块用于暴露rpc 接口给调用方
+    </description>
+
     <dependencies>
         <dependency>
             <groupId>es</groupId>
             <artifactId>es-domain</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+        </dependency>
+
     </dependencies>
+
 
 </project>

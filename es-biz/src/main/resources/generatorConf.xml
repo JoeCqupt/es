@@ -11,11 +11,16 @@
     <properties resource="server.properties"></properties>
 
     <context id="default" targetRuntime="MyBatis3">
+        <plugin type = "org.mybatis.generator.plugins.SerializablePlugin">
+        </plugin>
+
         <jdbcConnection driverClass="${className}"
                         connectionURL="${url}"
                         userId="${user}"
                         password="${password}">
         </jdbcConnection>
+
+
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>

@@ -9,4 +9,6 @@ public interface UserService {
     User login(String userName, String password);
 
     void register(@Validated UserRegisterREQ req);
+
+    void updateName(String name, int id);
 }

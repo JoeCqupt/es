@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.constraints.NotNull;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("api/user")
 public class UserController {
 
     private Logger logger = LoggerFactory.getLogger(UserController.class);

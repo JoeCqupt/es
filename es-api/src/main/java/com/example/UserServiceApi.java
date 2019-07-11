@@ -8,4 +8,5 @@ public interface UserServiceApi {
 
     List<User> queryByName(String name);
 
+    void updateAge(int age, int id);
 }

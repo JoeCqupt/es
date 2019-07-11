@@ -39,10 +39,26 @@ public class UserServiceImpl implements UserService, UserServiceApi {
     }
 
     @Override
+    public void updateName(String name, int id) {
+        User updateUser = new User();
+        updateUser.setUserName(name);
+        updateUser.setId(id);
+        userMapper.updateByPrimaryKeySelective(updateUser);
+    }
+
+    @Override
     public List<User> queryByName(String name) {
         MyAssert.notBlank(name);
         UserExample example = new UserExample();
         example.createCriteria().andUserNameEqualTo(name);
         return userMapper.selectByExample(example);
+    }
+
+    @Override
+    public void updateAge(int age, int id) {
+        User updateUser = new User();
+        updateUser.setUserAge((byte) age);
+        updateUser.setId(id);
+        userMapper.updateByPrimaryKeySelective(updateUser);
     }
 }

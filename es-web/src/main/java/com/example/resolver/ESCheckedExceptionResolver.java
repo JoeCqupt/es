@@ -52,6 +52,7 @@ public class ESCheckedExceptionResolver implements HandlerExceptionResolver, Pri
                 resultDTO = ResultDTO.fail(ErrorCode.PARAM_ERROR);
             }
         } else {
+            LOGGER.error(ex.getLocalizedMessage(), ex);
             resultDTO = ResultDTO.fail(ErrorCode.UNKNOWN_ERROR);
         }
 

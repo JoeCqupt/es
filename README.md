@@ -20,7 +20,22 @@ java web 项目开发示例项目
 
 * travis-ci 关联findbugs、checkStyle、SourceMonitor
 * test mock 的使用
+* 分布式事务
 * nginx config
 * dubbo/Spring Cloud
 * 缓存redis
 * MQ(activeMQ/RocketMQ)
+* 网关
+* 配置中心
+* 注册中心
+* 限流
+* 压测
+* 降级
+* 故障演练
+* 日志统一收集
+* 调用链路追踪
+* 数据库proxy
+* 任务调度中心
+* 发布系统
+* 监控
+* servicemesh

@@ -24,3 +24,5 @@ java web 项目开发示例项目
 * dubbo/Spring Cloud
 * 缓存redis
 * MQ(activeMQ/RocketMQ)
+* 整合spring cloud 全家桶
+* ci  发布脚本

@@ -1,6 +1,5 @@
 package leetcode.middle.s3_tree;
 
-import java.util.LinkedList;
 
 public class LC200 {
     public static void main(String[] args) {

@@ -3,24 +3,14 @@ package basic.byteopt;
 public class ByteOpt {
 
     public static void main(String[] args) {
-        int reqCapacity = 513;
+        // 是除以2的5次方
+        System.out.println(64 >>> 5);
 
-        // netty计算分配内存大小的算法 todo @joe
-        int normalizedCapacity = reqCapacity;
-        normalizedCapacity --;
-        normalizedCapacity |= normalizedCapacity >>>  1;
-        normalizedCapacity |= normalizedCapacity >>>  2;
-        normalizedCapacity |= normalizedCapacity >>>  4;
-        normalizedCapacity |= normalizedCapacity >>>  8;
-        normalizedCapacity |= normalizedCapacity >>> 16;
-        normalizedCapacity ++;
+        // 异或
+        int i1 = 1;
+        int i2 = 3;
+        System.out.println(~(i1&i2) & (i1 | i2) );
+        System.out.println(i1 ^ i2);
 
-        if (normalizedCapacity < 0) {
-            normalizedCapacity >>>= 1;
-        }
-
-        //
-
-        System.out.println(64>>>5);
     }
 }

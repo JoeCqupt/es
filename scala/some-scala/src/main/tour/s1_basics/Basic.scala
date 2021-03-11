@@ -57,4 +57,7 @@ object Basic {
   // 返回类型为 Unit（它有点像Java和C语言中的void）: 返回类型声明就可以省略
   def doNothing = println("do nothing")
 
+  def add3(x: Int, y: Int) { // 等号可以省略
+    x + y
+  }
 }

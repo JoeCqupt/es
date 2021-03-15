@@ -6,8 +6,9 @@ object SomeTest {
     map += (1 -> "test")
     println(map)
 
+    // 有个学名叫： 偏函数
     map.foreach {
-      case (k, v) => println(s"key: $k ,value: $v")  //这一行可以理解为带match的匿名函数？？
+      case (k, v) => println(s"key: $k ,value: $v") //这一行可以理解为带match的匿名函数？？
     }
 
   }

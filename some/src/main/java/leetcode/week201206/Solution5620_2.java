@@ -6,6 +6,7 @@ public class Solution5620_2 {
         Solution5620_2 s = new Solution5620_2();
         s.concatenatedBinary(0);
     }
+
     public int concatenatedBinary(int n) {
         StringBuilder sb = new StringBuilder();
         for (int i = 1; i <= n; i++) {

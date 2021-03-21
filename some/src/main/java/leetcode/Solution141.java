@@ -1,8 +1,18 @@
 package leetcode;
 
-import leetcode.common.ListNode;
 
 public class Solution141 {
+
+    public static class ListNode {
+        public int val;
+        public ListNode next;
+
+        public ListNode(int x) {
+            val = x;
+        }
+
+    }
+
     /**
      * 快慢指针
      * @return

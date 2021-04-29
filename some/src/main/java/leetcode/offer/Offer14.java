@@ -1,6 +1,6 @@
 package leetcode.offer;
 
-public class Offer14 {
+public class    Offer14 {
     public static void main(String[] args) {
         Offer14 o = new Offer14();
         int i = o.cuttingRope(10);

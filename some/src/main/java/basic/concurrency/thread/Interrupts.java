@@ -6,10 +6,10 @@ import java.util.concurrent.TimeUnit;
 public class Interrupts {
     public static void main(String[] args) throws InterruptedException {
         // 忽略中断
-//        test1();
+        test1();
 
         // 处理中断
-        test2();
+//        test2();
     }
 
     public static void test1() throws InterruptedException {
@@ -44,8 +44,8 @@ public class Interrupts {
                     // ignore
                     System.out.println(System.currentTimeMillis() + ":i got an interrupt, but i ignore");
                     // InterruptedException 一般会清除interrupt Status
-                    System.out.println("current interrupt state:" + Thread.interrupted()); // false
-                    Thread.currentThread().interrupt(); // 可以使用这种方式将传递 interrupt Status
+//                    System.out.println("current interrupt state:" + Thread.interrupted()); // false
+//                    Thread.currentThread().interrupt(); // 可以使用这种方式将传递 interrupt Status
                 }
                 System.out.println(System.currentTimeMillis() + ":i am running");
             }

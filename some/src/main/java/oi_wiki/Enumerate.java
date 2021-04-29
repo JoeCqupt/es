@@ -1,4 +1,4 @@
-package leetcode.oi_wiki.basic;
+package oi_wiki;
 
 import java.util.HashSet;
 import java.util.Set;

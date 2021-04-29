@@ -3,6 +3,9 @@ package newcoder;
 import java.util.Comparator;
 import java.util.TreeSet;
 
+/**
+ * 美团应届测开 笔试题
+ */
 public class MTTest2 {
 
     static class Item {

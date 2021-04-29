@@ -1,4 +1,4 @@
-package leetcode;
+package newcoder;
 
 import java.util.Scanner;
 

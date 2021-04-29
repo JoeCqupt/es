@@ -3,6 +3,9 @@ package newcoder;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 美团应届测开 笔试题
+ */
 public class MTTest1 {
     static class TreeNode {
         int idx; // 节点索引

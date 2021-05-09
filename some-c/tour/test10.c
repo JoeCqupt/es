@@ -1,6 +1,7 @@
 #include <stdio.h>
 void printArray(int[], int);
 void printArray2(int *arr[], int, int);
+void printArray22(int **arr, int, int);
 void printArray2_1(int (*arr)[4], int, int);
 void printArray3(int arr[][4], int, int);
 
@@ -12,17 +13,24 @@ int main()
 
     //注意看这里的初始化方式
     int m1[3][4] = {0, 1, 2, 3, 4, 5, 6, 7};
+
+    printf("=====---2---=====\n");
+
     int *mpa[3];
-    mpa[0] = &m1[0][0];
-    mpa[1] = &m1[1][0];
-    mpa[2] = &m1[2][0];
+    mpa[0] = m1[0];
+    mpa[1] = m1[1];
+    mpa[2] = m1[2];
     printArray2(mpa, 3, 4);
 
-    printf("=====------=====\n");
+    printf("=====---22---=====\n");
+    printArray22(mpa, 3, 4);
+
+    printf("=====---2_1---=====\n");
     printArray2_1(m1, 3, 4);
 
-    printf("=====------=====\n");
+    printf("=====---3---=====\n");
     printArray3(m1, 3, 4);
+
     return 0;
 }
 
@@ -41,6 +49,18 @@ void printArray2(int *arr[], int rows, int cols) //这种声明方式也是OK的
     {
         printf("row : %d \n", i);
         printArray(arr[i], cols);
+    }
+}
+
+void printArray22(int **arr, int rows, int cols)
+{
+    for (int i = 0; i < rows; i++)
+    {
+        printf("row : %d \n", i);
+        for (int j = 0; j < cols; j++)
+        {
+            printf("col : %d val:%d \n", j, arr[i][j]);
+        }
     }
 }
 

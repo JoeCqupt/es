@@ -30,5 +30,8 @@ int main()
         printf("pa idx:%d value %p \n", i, pa[i]);
     }
 
+
+
+
     return 0;
 }

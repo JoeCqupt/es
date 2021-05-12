@@ -1,0 +1,4 @@
+test:
+	echo "hello world"
+test2:
+	echo "hello world2"

@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
-#include  <stdlib.h>
+#include <stdlib.h>
 
 extern int errno;
 
 int main()
 {
 
-    // 错误处理 
+    // 错误处理
     FILE *pf;
     pf = fopen("noexit.txt", "r");
     if (pf == NULL)

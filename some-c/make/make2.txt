@@ -1,0 +1,17 @@
+#.RECIPEPREFIX = > #替换命令行前的tab为> 但是这个功能只能在高版本的make才能生效
+#replace:
+#> echo "replace"
+
+
+#.ONESHELL: #可以让var-lost也可以取到值，但是高版本支持
+
+var-lost:
+	export foo=bar;
+	echo "foo=[$$foo]"
+var-kept1:
+	export foo=bar;echo "foo=[$$foo]"
+
+var-kept2:
+	export foo=bar; \
+	echo "foo=[$$foo]"
+

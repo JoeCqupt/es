@@ -1,4 +1,10 @@
+.PHONY:test
+.PHONY:test2
 test:
 	echo "hello world"
 test2:
 	echo "hello world2"
+result.txt:source.txt
+	cp source.txt result.txt
+source.txt:
+	echo "this is the source" > source.txt
